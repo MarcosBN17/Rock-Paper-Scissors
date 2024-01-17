@@ -55,7 +55,7 @@ body {
 }
 
 #scorecontainer {
-    margin: 50px;
+    margin: 20px;
     border: 2px solid #333;
     display: flex;
     text-align: center;
@@ -64,7 +64,7 @@ body {
 }
 
 #playAgainContainer {
-    margin: 50px;
+    margin: 20px;
     display: flex;
     justify-content:space-around;
     align-items: center;
