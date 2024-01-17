@@ -56,6 +56,13 @@
 
                 // Show "Play Again" button
                 createPlayAgainButton();
+
+                // Check if either the player or CPU has reached 5 points
+                const winner = playerScore === 5 ? "Player" : "CPU";
+                displayResult(`${winner} wins the game!`);
+
+                return;
+            
             }
 
             if (playerSelection === computerSelection) {
@@ -75,12 +82,7 @@
             // Update the score display
             updateScoreDisplay();
 
-            // Check if either the player or CPU has reached 5 points
-            if (playerScore === 5 || cpuScore === 5) {
-                const winner = playerScore === 5 ? "Player" : "CPU";
-                displayResult(`${winner} wins the game!`);
-                //endGame();
-            }
+        
         }
 
         function displayResult(resultText) {
