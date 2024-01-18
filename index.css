@@ -34,6 +34,7 @@ body {
 #buttons-container button {
     margin-right: 10px;
     border: 2px solid #333;
+    border-radius: 10px;
 }
 
 #buttons-container button:hover {
@@ -45,8 +46,12 @@ body {
     height: 100px;
 }
 
+
 #gamecontainer {
-    margin: 50px;
+    margin: 50px auto;
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
     border: 2px solid #333;
     display: flex;
     text-align: center;
@@ -55,12 +60,16 @@ body {
 }
 
 #scorecontainer {
-    margin: 20px;
+    margin: 20px auto;
+    width: 200px;
+    height: 30px;
     border: 2px solid #333;
+    border-radius: 10px;
     display: flex;
     text-align: center;
     justify-content: center;
     flex-direction: column;
+    
 }
 
 #playAgainContainer {

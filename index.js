@@ -47,24 +47,7 @@
         }
 
         function playRound(playerSelection, computerSelection) {
-
-            if (playerScore === 5 || cpuScore === 5) {
-                // Disable game buttons
-                BtnPaper.disabled = true;
-                BtnRock.disabled = true;
-                BtnScissors.disabled = true;
-
-                // Show "Play Again" button
-                createPlayAgainButton();
-
-                // Check if either the player or CPU has reached 5 points
-                const winner = playerScore === 5 ? "Player" : "CPU";
-                displayResult(`${winner} wins the game!`);
-
-                return;
             
-            }
-
             if (playerSelection === computerSelection) {
             displayResult("It's a Tie!");
             } else if (
@@ -85,7 +68,12 @@
         
         }
 
-        function displayResult(resultText) {
+        function displayResult(resultText, playerSelection, computerSelection) {
+            //Remove existing results
+            const existingResults = document.querySelectorAll('.result');
+            existingResults.forEach(element => element.remove());
+
+            //Create and append the new result
             const result = document.createElement('div');
             result.classList.add('result');
             result.textContent = resultText;
@@ -94,6 +82,21 @@
 
         function updateScoreDisplay() {
             scoreDisplay.textContent = `Player: ${playerScore} | CPU: ${cpuScore}`;
+
+            if (playerScore === 5 || cpuScore === 5) {
+
+             // Disable game buttons
+             BtnPaper.disabled = true;
+             BtnRock.disabled = true;
+             BtnScissors.disabled = true;              
+
+             // Check if either the player or CPU has reached 5 points
+             const winner = playerScore === 5 ? "Player" : "CPU";
+             displayResult(`${winner} wins the game!`);
+
+             //Show "Play Again" button
+             createPlayAgainButton();
+            }
         }
 
         function createPlayAgainButton() {
